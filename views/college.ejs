@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title><%= college.get('name') %> - College</title>
+		<link rel="stylesheet" href="<%= env === 'development' ? '/styles/main.scss.css' : '/styles/main.scss.min.css?'+version %>" />
+
+	</head>
+	<body>
+		<a href="/">Home</a>
+		<h1><%= college.get('name') %></h1>
+		<h4>Location: <%= college.get('state') %></h4>
+		<a href="<%= college.get('website') %>"><%= college.get('website') %></a>
+		<h2>Applicants</h2>
+		<table>
+			<thead>
+				<tr>
+					<th>First Name</th>
+					<th>Last Name</th>
+					<th>GPA</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<% college.relations.applications.forEach(app => { %>
+					<tr>
+						<td><%= app.get('firstName') %></td>
+						<td><%= app.get('lastName') %></td>
+						<td><%= app.get('gpa') %></td>
+						<td><a href="/applications/<%= app.id %>">View Details</a></td>
+					</tr>
+				<% }); %>
+			</tbody>
+		</table>
+		<script type="text/javascript" src="<%= env === 'development' ? '/scripts/bundle.js' : '/scripts/bundle.min.js?'+version %>"></script>
+	</body>
+</html>

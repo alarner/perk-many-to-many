@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title><%= title %></title>
+		<link rel="stylesheet" href="<%= env === 'development' ? '/styles/main.scss.css' : '/styles/main.scss.min.css?'+version %>" />
+
+	</head>
+	<body>
+		<a href="/">Home</a>
+		<h1><%= title %></h1>
+		<table>
+			<thead>
+				<tr>
+					<th>Name</th>
+					<th>State</th>
+					<th>Website</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<% colleges.forEach(college => { %>
+					<tr>
+						<td><%= college.get('name') %></td>
+						<td><%= college.get('state') %></td>
+						<td><%= college.get('website') %></td>
+						<td><a href="/colleges/<%= college.id %>">View Details</a></td>
+					</tr>
+				<% }); %>
+			</tbody>
+		</table>
+		<script type="text/javascript" src="<%= env === 'development' ? '/scripts/bundle.js' : '/scripts/bundle.min.js?'+version %>"></script>
+	</body>
+</html>
