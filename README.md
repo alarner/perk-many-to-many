@@ -2,6 +2,8 @@
 
 This is a simple example of how to use many to many relationships with [Bookshelf.js](http://bookshelfjs.org/). This example was put together using [Perk](http://perkframework.com) - a well documented set of tools for building node web applications.
 
+This example was created for the [Perk Documentation on many to many relationships](http://perkframework.com/api/database.html#many-to-many)
+
 ## To run
 
 1. Git clone this repo
