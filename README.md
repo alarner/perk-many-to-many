@@ -18,6 +18,8 @@ This example was created for the [Perk Documentation on many to many relationshi
 
 ## Important files
 
+Look at these files for the necessary pieces to establish a many to many relationship using Bookshelf.js.
+
 ### Migrations
 
 * [/migrations/20160502194317_create_colleges.js](/migrations/20160502194317_create_colleges.js)
